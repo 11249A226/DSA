@@ -62,13 +62,13 @@ void InsertAtPosition(struct Node **head, int data, int position) {
         printf("Position out of range!\n");
         return;
     }
-
+// only when given position is valid
     struct Node *newNode = CreateNode(data);
     newNode->next = prev->next;
     prev->next = newNode;
     printf("Inserted %d at position %d.\n", data, position);
 }
-
+// delete a node by value 
 void DeleteNode(struct Node **head, int valueToDelete) {
     if (*head == NULL) {
         printf("The list is empty.\n");
@@ -76,14 +76,14 @@ void DeleteNode(struct Node **head, int valueToDelete) {
     }
 
     struct Node *temp = *head;
-
+// if head itself holds the value
     if (temp->data == valueToDelete) {
         *head = temp->next;
         free(temp);
         printf("Deleted %d from the list.\n", valueToDelete);
         return;
     }
-
+// search for the value
     struct Node *prev = *head;
     while (prev->next != NULL) {
         if (prev->next->data == valueToDelete) {
@@ -98,7 +98,7 @@ void DeleteNode(struct Node **head, int valueToDelete) {
 
     printf("Value %d not found in the list.\n", valueToDelete);
 }
-
+//display all elements
 void DisplayList(struct Node *head) {
     if (head == NULL) {
         printf("The list is empty.\n");
@@ -113,7 +113,7 @@ void DisplayList(struct Node *head) {
     }
     printf("NULL\n");
 }
-
+//main function
 int main() {
     struct Node *head = NULL;
     int choice, data, pos;
