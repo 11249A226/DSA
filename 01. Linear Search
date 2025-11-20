@@ -3,6 +3,7 @@ To implement the linear search algorithm to find the position of given element i
 
 Code:
 
+/*linear search: */
 #include<stdio.h>
 int main() {
     int n, i, key, found = 0;
